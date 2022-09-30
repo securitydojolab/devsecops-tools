@@ -29,7 +29,7 @@ def main():
     try:
         for root, dirs, files in os.walk(cwd):
             for file in files:
-                if file.endswith((".xml", ".json")):
+                if file.endswith((".xml", ".json")) and not file.startswith(("client_secrets","mycreds")):
                     file_path=(os.path.join(root, file))
             #print(file_path)
                     head_tail = os.path.split(file_path)
